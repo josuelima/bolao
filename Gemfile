@@ -27,8 +27,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development, :test do
+group :development, :test do  
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'codeclimate-test-reporter', require: nil
 end

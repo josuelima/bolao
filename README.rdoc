@@ -1,4 +1,4 @@
-{<img src="https://travis-ci.org/josuelima/bolao.svg" alt="Build Status" />}[https://travis-ci.org/josuelima/bolao]
+{<img src="https://travis-ci.org/josuelima/bolao.svg" alt="Build Status" />}[https://travis-ci.org/josuelima/bolao] {<img src="https://codeclimate.com/github/josuelima/bolao.png" />}[https://codeclimate.com/github/josuelima/bolao]
 
 == README
 
