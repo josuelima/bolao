@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/josuelima/bolao.png)](https://travis-ci.org/josuelima/bolao)
+{<img src="https://travis-ci.org/josuelima/bolao.svg" alt="Build Status" />}[https://travis-ci.org/josuelima/bolao]
 
 == README
 

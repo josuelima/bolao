@@ -2,15 +2,8 @@ language: ruby
 bundler_args: --without development production
 env:
   - APP_BOLAO_SECRET_TOKEN=4332f52629f19ce91a0f5d7729deede34ed4ae5bb537eeb21720dab8f929748d24ed6c5a353668306376fc41d1cdfbfd6b8cdd5e4b11c5e56deb2884c19d3291
-  - APP_BOLAO_BD_USER_NAME=root
-  - APP_BOLAO_BD_USER_PASS=password
-  - APP_BOLAO_BD_HOST=localhost
-  - APP_BOLAO_FACEBOOK_ID=244304572440568
-  - APP_BOLAO_FACEBOOK_PASS=a5b536fae5c174a1eb3fa11528d527c6
 rvm:
   - 2.1.0
-before_install:
-  - travis_retry gem install bundler  
 before_script:
   - mysql -e 'create database bolao_test;'
   - bundle exec rake db:migrate db:test:prepare

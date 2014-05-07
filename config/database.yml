@@ -1,8 +1,8 @@
 base_configs: &base_configs
   adapter:  mysql2
-  username: <%= ENV['APP_BOLAO_BD_USER_NAME'] %>
-  password: <%= ENV['APP_BOLAO_BD_USER_PASS'] %>
-  host:     <%= ENV['APP_BOLAO_BD_HOST'] %>
+  username: <%= ENV['APP_BOLAO_BD_USER_NAME'] || "root" %>
+  password: <%= ENV['APP_BOLAO_BD_USER_PASS'] || "" %>
+  host:     <%= ENV['APP_BOLAO_BD_HOST'] || "localhost" %>
 
 development:
   <<: *base_configs
