@@ -1,0 +1,25 @@
+%table.table
+  %thead
+    %th.center Jogo
+    %th.center{colspan: 7} Resultado
+    %th.center{colspan: 3} Aposta
+    %th.center Pontuação
+  - guesses.each do |guess|
+    %tr
+      %td
+        %a{href: match_details_path(guess.match)}= "#{guess.match.data_hora} (#{guess.match.group.name})"
+      %td{align: "right"}= guess.match.team_a.name      
+      %td.center
+        %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{guess.match.team_a.slug}.png", width: 20}
+      %td.col-sm-1.center= guess.match.goals_a
+      %td.center x
+      %td.col-sm-1.center= guess.match.goals_b
+      %td.center
+        %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{guess.match.team_b.slug}.png", width: 20}
+      %td= guess.match.team_b.name
+      %td.center= guess.goals_a
+      %td.center x
+      %td.center= guess.goals_b
+      %td.center
+        - if guess.score > 0
+          %span{class: guess.score_classes}= "+#{guess.score}"

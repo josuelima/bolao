@@ -1,0 +1,8 @@
+.box-rounded.center
+  = image_tag("logo.jpg")
+  %br/
+  %br/
+  %a.btn.btn-primary.btn-lg{ role: "button", href: user_omniauth_authorize_path(:facebook) }
+    %span.glyphicon.glyphicon-thumbs-up 
+    = " Entrar com Facebook"
+  %br/

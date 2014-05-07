@@ -1,0 +1,43 @@
+.box-rounded.center
+  %h1
+    = @match.team_a.name
+    %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{@match.team_a.slug}.png"} 
+    = @match.goals_a
+    = "X"
+    = @match.goals_b
+    %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{@match.team_b.slug}.png"}
+    = @match.team_b.name
+
+.box-rounded
+  %span.glyphicon.glyphicon-time
+  = @match.data_hora
+  - if @match.is_open_to_guesses?
+    = "&nbsp;".html_safe
+    %a.btn.btn-danger.btn-xs{href: my_guesses_path} Apostar!
+  - unless @match.scorers.empty?
+    = " | "
+    - @match.scorers.each do |guess|
+      %a{href: user_profile_path(guess.user)}
+        %img.img-circle{src: guess.user.image, width: 25, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.user.name}
+
+- unless @match.is_open_to_guesses?
+  %h3 Apostas
+  .box-rounded
+    %table.table
+      %thead
+        %th
+        %th.center Aposta
+        %th.center Pontuação
+      - @match.guesses.each do |guess|
+        %tr
+          %td
+            %a{href: user_profile_path(guess.user)}
+              %img.img-circle{src: guess.user.image, width: 25, hspace: 5}
+            %a{href: user_profile_path(guess.user)}
+              = guess.user.name
+          %td.center
+            = guess
+          %td.center
+            - if guess.score > 0
+              %span{class: guess.score_classes}
+                = "+#{guess.score}"

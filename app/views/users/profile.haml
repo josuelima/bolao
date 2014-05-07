@@ -1,0 +1,11 @@
+.box-rounded
+  .row
+    .col-md-1.center
+      %img.img-circle{src: @profile.image, vspace: 30}
+    .col-md-11
+      %h1= @profile.name
+      %h3= pluralize(@profile.score, 'Ponto')
+
+.box-rounded
+  %h2= "Apostas"
+  = render partial: "guesses_table", locals: {guesses: @profile.public_guesses}

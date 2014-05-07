@@ -1,0 +1,17 @@
+base_configs: &base_configs
+  adapter:  mysql2
+  username: <%= ENV['APP_BOLAO_BD_USER_NAME'] %>
+  password: <%= ENV['APP_BOLAO_BD_USER_PASS'] %>
+  host:     <%= ENV['APP_BOLAO_BD_HOST'] %>
+
+development:
+  <<: *base_configs
+  database: bolao_dev
+
+test:
+  <<: *base_configs
+  database: bolao_test
+
+production:
+  <<: *base_configs
+  database: bolao
