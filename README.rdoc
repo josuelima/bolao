@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/josuelima/bolao.png)](https://travis-ci.org/josuelima/bolao)
+
 == README
 
 This README would normally document whatever steps are necessary to get the
