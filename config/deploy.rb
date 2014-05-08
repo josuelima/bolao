@@ -37,6 +37,7 @@ set :deploy_to, '/home/deployer/bolao'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 set :bundle_flags, "--deployment"
+set :bundle_path, nil
 
 namespace :deploy do
 
