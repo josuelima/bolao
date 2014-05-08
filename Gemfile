@@ -22,14 +22,18 @@ gem 'rails_admin'
 gem 'devise'
 gem 'omniauth-facebook'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
-group :development, :test do  
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'codeclimate-test-reporter', require: nil
 end
+
+gem 'puma'
+gem 'foreman'
+
+ruby "2.1.0"
