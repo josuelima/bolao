@@ -38,6 +38,7 @@ set :deploy_to, '/home/deployer/bolao'
 # set :keep_releases, 5
 set :bundle_flags, "--deployment"
 set :bundle_path, nil
+set :bundle_binstubs, nil
 
 namespace :deploy do
 

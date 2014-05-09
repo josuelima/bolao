@@ -5,7 +5,7 @@ gem 'rails', '4.0.4'
 gem 'mysql2'
 
 gem 'less-rails'
-gem 'execjs'
+gem 'therubyracer', '~> 0.12.1'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
