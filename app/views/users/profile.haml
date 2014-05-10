@@ -4,7 +4,9 @@
       %img.img-circle{src: @profile.image, vspace: 30}
     .col-md-11
       %h1= @profile.name
-      %h3= pluralize(@profile.score, 'Ponto')
+      %button.btn.btn-success= pluralize(@profile.score, 'Ponto')
+      - unless @profile.position.nil?
+        %button.btn.btn-info= "##{@profile.position}"
 
 .box-rounded
   %h2= "Apostas"

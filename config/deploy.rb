@@ -2,7 +2,7 @@
 SSHKit.config.command_map[:rake] = "bundle exec rake"
 
 # config valid only for Capistrano 3.1
-lock '3.1.0'
+lock '3.2.1'
 
 set :application, 'bolao'
 set :repo_url, 'git@github.com:josuelima/bolao.git'
@@ -45,7 +45,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      sh "kill `cat /tmp/pids/bolao.0.pid`"
+      execute "kill `cat /tmp/pids/bolao.0.pid`"
     end
   end
 

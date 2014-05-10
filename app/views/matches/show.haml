@@ -20,7 +20,13 @@
       %a{href: user_profile_path(guess.user)}
         %img.img-circle{src: guess.user.image, width: 25, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.user.name}
 
-- unless @match.is_open_to_guesses?
+- if @match.is_open_to_guesses?
+  .box-rounded
+    %h2
+      %small
+        %span.glyphicon.glyphicon-info-sign
+        = "Jogo ainda não iniciado! Volte em breve para ver as apostas dos outros usuários"
+- else
   %h3 Apostas
   .box-rounded
     %table.table
