@@ -37,7 +37,7 @@ set :deploy_to, '/home/deployer/bolao'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 set :bundle_flags, "--deployment"
-set :bundle_path, nil
+#set :bundle_path, nil
 set :bundle_binstubs, nil
 
 namespace :deploy do
@@ -45,8 +45,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      sh "kill `cat /tmp/pids/bolao.0.pid`"
     end
   end
 

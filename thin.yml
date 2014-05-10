@@ -1,11 +1,11 @@
 ---
 user: deployer
 group: staff
-pid: /tmp/pids/thin.pid
+pid: /tmp/pids/bolao.pid
 timeout: 30
 wait: 30
 log: log/thin.log
-max_cons: 1024
+max_conns: 1024
 environment: production
 max_persistent_conns: 512
 servers: 1
