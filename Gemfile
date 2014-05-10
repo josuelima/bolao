@@ -33,7 +33,7 @@ group :development, :test do
   gem 'codeclimate-test-reporter', require: nil
 end
 
-gem 'puma'
+gem 'thin'
 gem 'foreman'
 
 ruby "2.1.0"
