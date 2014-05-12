@@ -16,8 +16,9 @@ describe MatchDecorator do
   context 'methods' do
 
     it 'should format the date' do
-      match_decorated = create(:match, datetime: '2014-01-10 18:32:00').decorate
-      match_decorated.data_hora.should == "10/01/2014 18h"
+      now = Time.now
+      match_decorated = create(:match, datetime: now).decorate
+      match_decorated.data_hora.should == now.strftime('%d/%m/%Y %Hh')
     end
 
     it 'should return open/close to guesses according to the match time' do

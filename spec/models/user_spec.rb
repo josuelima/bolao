@@ -7,6 +7,8 @@ describe User do
     let!(:user) { create(:user) }
     subject { user }
 
+    it { should be_valid }
+
     it 'should be able to ushave guesses' do
       guess_1 = create(:guess, user: user)
       guess_2 = create(:guess, user: user)
