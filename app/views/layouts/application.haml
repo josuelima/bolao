@@ -71,15 +71,14 @@
                 %tr
                   %td
                     %h4= user.position
-                  %td
+                  %td{width: 50}
                     %a{href: user_profile_path(user)}
-                      %img.img-circle{src: user.image}
+                      %img.img-circle{src: user.profile_image, width: 50}
                   %td
                     %a{href: user_profile_path(user)}
                       %strong=user.name
+                    %br
                     %span.label.label-default= pluralize(user.score, 'Ponto')
 
-      / /row
       %footer
         %p &copy; Bolão 2014
-    / /container

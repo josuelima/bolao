@@ -33,5 +33,11 @@
         background-color: #eee;
       }
   %body
-    .container
-      = yield
+    .container.start-page
+      .box-rounded
+        .row
+          .col-md-7.center
+            %a{href: root_path}
+              = image_tag("logo.jpg")
+          .col-md-4
+            = yield

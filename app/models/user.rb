@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :rememberable,
-         :omniauthable, omniauth_providers: [:facebook]
+         :validatable, :omniauthable, omniauth_providers: [:facebook]
+
+  validates :name, presence: true
 
   has_many :guesses
 
