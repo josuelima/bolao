@@ -9,6 +9,12 @@ GIT
       rails (>= 3.1)
       railties (>= 3.1)
 
+GIT
+  remote: git://github.com/svenfuchs/i18n.git
+  revision: f871057b496ea596762b596cc7fe23f5a78cf484
+  specs:
+    i18n (0.6.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -97,7 +103,6 @@ GEM
       tilt
     hashie (2.1.1)
     hike (1.2.3)
-    i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -267,6 +272,7 @@ DEPENDENCIES
   factory_girl_rails
   foreman
   haml
+  i18n!
   jbuilder (~> 1.2)
   jquery-rails
   less-rails
