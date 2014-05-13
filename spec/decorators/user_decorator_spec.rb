@@ -19,11 +19,16 @@ describe UserDecorator do
     user_decorated.public_guesses.should be_kind_of(Draper::CollectionDecorator)
   end
 
-  it 'should have a default user profile image' do
-    user_decorated.profile_image.should == h.asset_path("default-user.jpg")
+  it 'should have a default image from gravatar' do
+    user_decorated.profile_image.should == Gravatar.new(user_decorated.email).image_url + "?d=mm"
   end
 
-  it 'should return user image image' do
+  it 'should use image from gravatar' do
+    user_decorated = build(:user, email: 'josuedsi@gmail.com').decorate
+    user_decorated.profile_image.should == "http://www.gravatar.com/avatar/7711ce8a674520d03f28668887b55c9c?d=mm"
+  end
+
+  it 'should return user image from facebook' do
     user = create(:user, image: "profile.jpg").decorate
     user.profile_image.should == "profile.jpg"
   end
