@@ -22,22 +22,22 @@
       %tr
         // short details for mobile
         %td.visible-xs.center
-          %img.img-circle{src: guess.match.team_a.flag, width: 20}
+          %img.img-circle.tooltip-img{src: guess.match.team_a.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.match.team_a.name}
         %td.visible-xs.center= "#{guess.match.goals_a} x #{guess.match.goals_b}"
         %td.visible-xs.center
-          %img.img-circle{src: guess.match.team_b.flag, width: 20}
+          %img.img-circle.tooltip-img{src: guess.match.team_b.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.match.team_b.name}
 
         // full details for other devices
         %td.hidden-xs
           %a{href: match_details_path(guess.match)}= "#{guess.match.data_hora} (#{guess.match.group.name})"
         %td.right.hidden-xs= guess.match.team_a.name      
         %td.center.hidden-xs
-          %img.img-circle{src: guess.match.team_a.flag, width: 20}
+          %img.img-circle.tooltip-img{src: guess.match.team_a.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.match.team_a.name}
         %td.col-sm-1.center.hidden-xs= guess.match.goals_a
         %td.center.hidden-xs x
         %td.col-sm-1.center.hidden-xs= guess.match.goals_b
         %td.center.hidden-xs
-          %img.img-circle{src: guess.match.team_b.flag, width: 20}
+          %img.img-circle.tooltip-img{src: guess.match.team_b.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.match.team_b.name}
         %td.hidden-xs= guess.match.team_b.name
 
         // same for both

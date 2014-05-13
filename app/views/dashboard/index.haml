@@ -14,7 +14,7 @@
                 .col-md-12.center
                   = match.team_a.name
                   %img.img-circle{src: match.team_a.flag, width: 30, hspace: 5}
-                  %span.h4 
+                  %span.h4
                   = "#{match.goals_a} X #{match.goals_b}"
                   %span.h4 
                   %img.img-circle{src: match.team_b.flag, width: 30, hspace: 5}
@@ -33,7 +33,7 @@
                       = "&nbsp;".html_safe
                       - match.scorers_limited.each do |guess|
                         %a{href: match_details_path(match)}
-                          %img.img-circle{src: guess.user.image, width: 20, title: guess.user.name}
+                          %img.img-circle.tooltip-img{src: guess.user.image, width: 20, title: guess.user.name, "data-toggle" => "tooltip", "data-placement" => "top"}
                 .col-md-3.right
                   %a.btn.btn-default.btn-xs{href: match_details_path(match)}
                     = "Detalhes &raquo;".html_safe

@@ -20,7 +20,7 @@
     %img.img-circle.small-flag{src: @match.team_b.flag}
     = @match.team_b.name
 
-.box-rounded.visible-xs
+.box-rounded
   %span.glyphicon.glyphicon-time
   = @match.data_hora
   - if @match.is_open_to_guesses?
@@ -30,14 +30,14 @@
     = " | "
     - @match.scorers.each do |guess|
       %a{href: user_profile_path(guess.user)}
-        %img.img-circle{src: guess.user.image, width: 25, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.user.name}
+        %img.img-circle.tooltip-img{src: guess.user.image, width: 25, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.user.name}
 
 - if @match.is_open_to_guesses?
   .box-rounded
     %h2
       %small
         %span.glyphicon.glyphicon-info-sign
-        = "Jogo ainda não iniciado! Volte em breve para ver as apostas dos outros usuários"
+        = "Jogo ainda não iniciado! Volte em breve para ver as apostas dos outros participantes"
 - else
   %h3 Apostas
   .box-rounded

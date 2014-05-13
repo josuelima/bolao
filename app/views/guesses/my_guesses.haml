@@ -15,13 +15,13 @@
             %td.hidden-xs= match.data_hora
             %td.hidden-xs{align: "right"}= match.team_a.name
             %td.center
-              %img.img-circle{src: match.team_a.flag, width: 20}
+              %img.img-circle.tooltip-img{src: match.team_a.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_a.name}
             %td.col-sm-1
               %input{type: "text", class: "form-control", name: 'guesses[][goals_a]', value: match.my_guess.try(:goals_a)}
             %td.center= "x"
             %td.col-sm-1
               %input{type: "text", class: "form-control", name: 'guesses[][goals_b]', value: match.my_guess.try(:goals_b)}
             %td
-              %img.img-circle{src: match.team_b.flag, width: 20}
+              %img.img-circle.tooltip-img{src: match.team_b.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_b.name}
             %td.hidden-xs= match.team_b.name
     = render 'submit_right'
