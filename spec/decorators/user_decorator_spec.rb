@@ -19,4 +19,13 @@ describe UserDecorator do
     user_decorated.public_guesses.should be_kind_of(Draper::CollectionDecorator)
   end
 
+  it 'should have a default user profile image' do
+    user_decorated.profile_image.should == h.asset_path("default-user.jpg")
+  end
+
+  it 'should return user image image' do
+    user = create(:user, image: "profile.jpg").decorate
+    user.profile_image.should == "profile.jpg"
+  end
+
 end

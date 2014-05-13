@@ -49,5 +49,22 @@ describe MatchDecorator do
       match_decorated.my_guess.should == guess_user_1
     end
 
+    it 'should have only 6 scorers' do
+      match = create(:match, goals_a: 3, goals_b: 1)
+      create(:guess, match: match, goals_a: 3, goals_b: 1)
+      create(:guess, match: match, goals_a: 3, goals_b: 1)
+      create(:guess, match: match, goals_a: 3, goals_b: 1)
+      create(:guess, match: match, goals_a: 3, goals_b: 1)
+      create(:guess, match: match, goals_a: 3, goals_b: 1)
+      create(:guess, match: match, goals_a: 3, goals_b: 1)
+      create(:guess, match: match, goals_a: 3, goals_b: 1)
+      create(:guess, match: match, goals_a: 3, goals_b: 1)
+
+      match_decorated = match.decorate
+
+      match_decorated.should have(8).guesses
+      match_decorated.should have(6).scorers_limited
+    end
+
   end
 end
