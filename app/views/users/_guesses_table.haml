@@ -5,27 +5,45 @@
       = "Nenhuma aposta finalizada para exibir no momento"
 - else
   %table.table
+
     %thead
-      %th.center Jogo
-      %th.center{colspan: 7} Resultado
-      %th.center{colspan: 3} Aposta
-      %th.center Pontuação
+      // short details for mobile
+      %th.visible-xs.center{colspan: 3} Jogo
+      %th.visible-xs.center.info{colspan: 3} Aposta
+      %th.visible-xs.center
+
+      // full details for other devices
+      %th.hidden-xs.center Jogo
+      %th.hidden-xs.center{colspan: 7} Resultado
+      %th.hidden-xs.center.info{colspan: 3} Aposta
+      %th.hidden-xs.center Pontuação
+
     - guesses.each do |guess|
       %tr
-        %td
+        // short details for mobile
+        %td.visible-xs.center
+          %img.img-circle{src: guess.match.team_a.flag, width: 20}
+        %td.visible-xs.center= "#{guess.match.goals_a} x #{guess.match.goals_b}"
+        %td.visible-xs.center
+          %img.img-circle{src: guess.match.team_b.flag, width: 20}
+
+        // full details for other devices
+        %td.hidden-xs
           %a{href: match_details_path(guess.match)}= "#{guess.match.data_hora} (#{guess.match.group.name})"
-        %td{align: "right"}= guess.match.team_a.name      
-        %td.center
-          %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{guess.match.team_a.slug}.png", width: 20}
-        %td.col-sm-1.center= guess.match.goals_a
-        %td.center x
-        %td.col-sm-1.center= guess.match.goals_b
-        %td.center
-          %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{guess.match.team_b.slug}.png", width: 20}
-        %td= guess.match.team_b.name
-        %td.center= guess.goals_a
-        %td.center x
-        %td.center= guess.goals_b
+        %td.right.hidden-xs= guess.match.team_a.name      
+        %td.center.hidden-xs
+          %img.img-circle{src: guess.match.team_a.flag, width: 20}
+        %td.col-sm-1.center.hidden-xs= guess.match.goals_a
+        %td.center.hidden-xs x
+        %td.col-sm-1.center.hidden-xs= guess.match.goals_b
+        %td.center.hidden-xs
+          %img.img-circle{src: guess.match.team_b.flag, width: 20}
+        %td.hidden-xs= guess.match.team_b.name
+
+        // same for both
+        %td.info.center= guess.goals_a
+        %td.info.center x
+        %td.info.center= guess.goals_b
         %td.center
           - if guess.score > 0
             %span{class: guess.score_classes}= "+#{guess.score}"

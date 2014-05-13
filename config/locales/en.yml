@@ -4,6 +4,7 @@ en:
     or: "or"
     sign_in_with_facebook: "Sign in with Facebook"
     create_account: "Create Account"
+    back: "Back"
 
   # Rails admin
   admin:

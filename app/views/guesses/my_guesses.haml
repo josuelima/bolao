@@ -7,21 +7,21 @@
     %table.table
       - @grouped_matches.each do |group, matches|
         %thead
-          %th{colspan: 8}= "Grupo #{group.name}"
+          %th{colspan: 42}= "Grupo #{group.name}"
         - matches.each do |match|
           = hidden_field_tag "guesses[][id]", match.my_guess.try(:id)
           = hidden_field_tag "guesses[][match_id]", match.id
           %tr
-            %td= match.data_hora
-            %td{align: "right"}= match.team_a.name
+            %td.hidden-xs= match.data_hora
+            %td.hidden-xs{align: "right"}= match.team_a.name
             %td.center
-              %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{match.team_a.slug}.png", width: 20}
+              %img.img-circle{src: match.team_a.flag, width: 20}
             %td.col-sm-1
               %input{type: "text", class: "form-control", name: 'guesses[][goals_a]', value: match.my_guess.try(:goals_a)}
             %td.center= "x"
             %td.col-sm-1
               %input{type: "text", class: "form-control", name: 'guesses[][goals_b]', value: match.my_guess.try(:goals_b)}
-            %td.center
-              %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{match.team_b.slug}.png", width: 20}
-            %td= match.team_b.name
+            %td
+              %img.img-circle{src: match.team_b.flag, width: 20}
+            %td.hidden-xs= match.team_b.name
     = render 'submit_right'

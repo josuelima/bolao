@@ -1,8 +1,8 @@
 .box-rounded
   .row
     .col-md-1.center
-      %img.img-circle{src: @profile.image, vspace: 30}
-    .col-md-11
+      %img.img-circle{src: @profile.profile_image, vspace: 30, width: 60}
+    .col-md-10
       %h1= @profile.name
       %button.btn.btn-success= pluralize(@profile.score, 'Ponto')
       - unless @profile.position.nil?

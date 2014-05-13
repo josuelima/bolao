@@ -12,5 +12,7 @@ Bolao::Application.routes.draw do
 
   get  '/jogo/:id',       to: 'matches#show',       as: :match_details
 
+  get  '/regras', to: 'rules#index', as: :rules
+
   root to: 'dashboard#index'
 end

@@ -1,14 +1,26 @@
-.box-rounded.center
+.box-rounded.visible-xs.center
   %h1
     = @match.team_a.name
-    %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{@match.team_a.slug}.png"} 
+    %br/
+    %img.img-circle.small-flag{src: @match.team_a.flag} 
     = @match.goals_a
     = "X"
     = @match.goals_b
-    %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{@match.team_b.slug}.png"}
+    %img.img-circle.small-flag{src: @match.team_b.flag}
+    %br/
     = @match.team_b.name
 
-.box-rounded
+.box-rounded.hidden-xs.center
+  %h1
+    = @match.team_a.name
+    %img.img-circle.small-flag{src: @match.team_a.flag} 
+    = @match.goals_a
+    = "X"
+    = @match.goals_b
+    %img.img-circle.small-flag{src: @match.team_b.flag}
+    = @match.team_b.name
+
+.box-rounded.visible-xs
   %span.glyphicon.glyphicon-time
   = @match.data_hora
   - if @match.is_open_to_guesses?
@@ -38,7 +50,7 @@
         %tr
           %td
             %a{href: user_profile_path(guess.user)}
-              %img.img-circle{src: guess.user.image, width: 25, hspace: 5}
+              %img.img-circle.hidden-xs{src: guess.user.image, width: 25, hspace: 5}
             %a{href: user_profile_path(guess.user)}
               = guess.user.name
           %td.center

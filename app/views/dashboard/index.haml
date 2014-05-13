@@ -13,11 +13,11 @@
               .row
                 .col-md-12.center
                   = match.team_a.name
-                  %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{match.team_a.slug}.png", width: 30, hspace: 5}
+                  %img.img-circle{src: match.team_a.flag, width: 30, hspace: 5}
                   %span.h4 
                   = "#{match.goals_a} X #{match.goals_b}"
                   %span.h4 
-                  %img.img-circle{src: "http://e.imguol.com/futebol/brasoes-redondos/100x100-borda-preta/#{match.team_b.slug}.png", width: 30, hspace: 5}
+                  %img.img-circle{src: match.team_b.flag, width: 30, hspace: 5}
                   = match.team_b.name
                   .row{style: 'margin-top: 15px;'}
                     %small
@@ -25,15 +25,15 @@
                       = match.data_hora
                   %hr
               .row
-                .col-md-8
+                .col-md-9
                   %small
                     = "Apostas:"
                     %span{class: match.status_classes}= match.open_to_guesses
                     - unless match.my_guess.nil?
                       = "&nbsp;".html_safe
-                      - match.scorers.each do |guess|
+                      - match.scorers_limited.each do |guess|
                         %a{href: match_details_path(match)}
                           %img.img-circle{src: guess.user.image, width: 20, title: guess.user.name}
-                .col-md-4.right
+                .col-md-3.right
                   %a.btn.btn-default.btn-xs{href: match_details_path(match)}
                     = "Detalhes &raquo;".html_safe

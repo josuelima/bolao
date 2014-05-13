@@ -1,9 +1,15 @@
 class MatchDecorator < Draper::Decorator
   decorates_association :guesses
+  decorates_association :team_a
+  decorates_association :team_b
   delegate_all
 
   def data_hora
     object.datetime.to_time.strftime('%d/%m/%Y %Hh')
+  end
+
+  def scorers_limited
+    scorers.take(6)
   end
 
   def my_guess

@@ -11,10 +11,13 @@
         remember_me: 'Manter logado'
 
   # Views
+  point: "ponto"
+
   sessions:
     or: "ou"
     sign_in_with_facebook: "Entrar com Facebook"
     create_account: "Criar Conta"
+    back: "Voltar"
 
   devise:
     omniauth_callbacks:
@@ -26,6 +29,23 @@
     registrations:
       user:
         signed_up: "Bem vindo ao Bolão"
+
+  rules:
+    guesses: >
+      As apostas devem ser feitas até o horário de início da cada partida.
+      Após o início da partida a mesma será removida da página de apostas e os 
+      participantes poderão conferir as apostas feitas por outros participantes 
+      na página de detalhes da partida. Ao termino da partida será gerada a
+      pontuação de cada participante para formação do rank de classificação.
+    score: "Os participantes poderão pontuar de duas maneiras ganhando 1 ou 3 pontos."
+    score_3: >
+      Para marcar 3 pontos o participante deve acertar exatamente o resultado final 
+      da partida em tempo normal (desconsiderando os penaltes)
+    score_1: >
+      Para marcar 1 ponto o participante deve acertar o vencedor da partida mas não
+      o resultado final. O mesmo vale para o caso de empates, onde o participante 
+      sugeriu o empate mas não acertou o resultado final.
+
 
   # Rails admin
   admin:
