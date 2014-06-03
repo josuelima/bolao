@@ -7,7 +7,7 @@
     %table.table
       - @grouped_matches.each do |group, matches|
         %thead
-          %th{colspan: 42}= "Grupo #{group.name}"
+          %th{colspan: 42}= group.name
         - matches.each do |match|
           = hidden_field_tag "guesses[][id]", match.my_guess.try(:id)
           = hidden_field_tag "guesses[][match_id]", match.id
