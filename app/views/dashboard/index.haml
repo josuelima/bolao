@@ -1,7 +1,7 @@
 %ul.nav.nav-tabs
   - @grouped_matches.each_with_index do |(group, matches), i|
     %li{class: ("active" if i == 0)}
-      %a{href: "#group_#{group.id}", "data-toggle" => "tab"}= "Grupo #{group.name}"
+      %a{href: "#group_#{group.id}", "data-toggle" => "tab"}= group.name
 %br/
 .tab-content
   - @grouped_matches.each_with_index do |(group, matches), i|
