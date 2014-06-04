@@ -24,8 +24,8 @@ describe MatchDecorator do
     it 'should return open/close to guesses according to the match time' do
       future_match = create(:future_match).decorate
       past_match   = create(:past_match).decorate
-      future_match.open_to_guesses.should == "Aberto"
-      past_match.open_to_guesses.should == "Fechado"
+      future_match.open_to_guesses_label.should == "Aberto"
+      past_match.open_to_guesses_label.should == "Fechado"
     end
 
     it 'should generate classes according to open / close to guesses' do

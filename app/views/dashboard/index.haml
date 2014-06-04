@@ -28,7 +28,7 @@
                 .col-md-9
                   %small
                     = "Apostas:"
-                    %span{class: match.status_classes}= match.open_to_guesses
+                    %span{class: match.status_classes}= match.open_to_guesses_label
                     - unless match.my_guess.nil?
                       = "&nbsp;".html_safe
                       - match.scorers_limited.each do |guess|

@@ -12,8 +12,9 @@ class Match < ActiveRecord::Base
 
   has_many :guesses
 
-  scope :active, -> { joins(:group).where("groups.active = ?", true).order("groups.name") }
+  scope :active, -> { joins(:group).where("groups.active = ?", true) }
   scope :open_to_guesses, -> { where("datetime > ?", Time.now) }
+  scope :group_ordered, -> { joins(:group).order("groups.name") }
 
   # select guesses which scored at least 1 point
   def scorers

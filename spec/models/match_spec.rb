@@ -46,6 +46,20 @@ describe Match do
       Match.open_to_guesses.should     include(match_future)
       Match.open_to_guesses.should_not include(match_past)
     end
+
+    it 'should list matches ordered by group name' do
+      m1 = create(:future_match, group: create(:group, name: 'E'))
+      m2 = create(:future_match, group: create(:group, name: 'C'))
+      m3 = create(:future_match, group: create(:group, name: 'B'))
+      m4 = create(:future_match, group: create(:group, name: 'A'))
+
+      matches = Match.where(id: [m1, m2, m3, m4]).group_ordered
+      
+      matches[0].group.name.should == 'A'
+      matches[1].group.name.should == 'B'
+      matches[2].group.name.should == 'C'
+      matches[3].group.name.should == 'E'
+    end
   end
 
   context 'class methods' do

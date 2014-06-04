@@ -23,7 +23,7 @@ class MatchDecorator < Draper::Decorator
     classes
   end
 
-  def open_to_guesses
+  def open_to_guesses_label
     is_open_to_guesses? ? "Aberto" : "Fechado"
   end
 end
