@@ -71,7 +71,7 @@
               = "Classificação"
             %table.table
               - @users.each_with_index do |user, index|
-                %tr{class: ("hide hidden_rank" if index > 2)}
+                %tr{class: ("hide hidden_rank" if index > 3)}
                   %td
                     .row
                       .col-xs-1.col-md-2
@@ -85,11 +85,10 @@
                         %br{clear: "all"}
                         %span.label.label-default= pluralize(user.score, 'Ponto')
 
-            - if @users.size > 3
+            - if @users.size > 4
               %button.btn.expand_rank.btn-primary{type: "button"}
                 %span#expand.glyphicon.glyphicon-chevron-down
 
-        .col-lg-3
           .box-rounded
             %h4
               %span.glyphicon.glyphicon-calendar

@@ -22,7 +22,8 @@ describe DashboardController do
       active_matches_by_group = Match.active.decorate(context: {user: user}).group_by(&:group)
 
       get :index
-      assigns(:grouped_matches).should eq(active_matches_by_group)
+      assigns(:grouped_matches).should include(active_matches_by_group)
+      assigns(:grouped_matches).should_not include(match_b)
     end
 
   end
