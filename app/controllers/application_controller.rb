@@ -1,13 +1,14 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  before_action :authenticate_user!, :load_ranking
+  before_action :authenticate_user!, :side_menu
   before_filter :configure_devise_params, if: :devise_controller?
 
   protect_from_forgery with: :exception
 
-  def load_ranking
+  def side_menu
     @users = User.rank.decorate
+    @today_matches = Match.today.decorate
   end
 
   # needed to accept the user name

@@ -21,6 +21,12 @@ describe MatchDecorator do
       match_decorated.data_hora.should == now.strftime('%d/%m/%Y %Hh')
     end
 
+    it 'should formt the time' do
+      now = Time.now
+      match_decorated = create(:match, datetime: now).decorate
+      match_decorated.hora.should == now.strftime('%Hh%M')
+    end
+
     it 'should return open/close to guesses according to the match time' do
       future_match = create(:future_match).decorate
       past_match   = create(:past_match).decorate

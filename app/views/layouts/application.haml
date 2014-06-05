@@ -65,23 +65,54 @@
           = bootstrap_flash
           = yield
         .col-lg-3
-          .box-rounded            
-            %h4 
+          .box-rounded
+            %h4
+              %span.glyphicon.glyphicon-fire
               = "Classificação"
             %table.table
-              - @users.each do |user|
-                %tr
+              - @users.each_with_index do |user, index|
+                %tr{class: ("hide hidden_rank" if index > 2)}
                   %td
-                    %h4= user.position
-                  %td{width: 50}
-                    %a{href: user_profile_path(user)}
-                      %img.img-circle{src: user.profile_image, width: 50}
-                  %td
-                    %a{href: user_profile_path(user)}
-                      %strong=user.name
-                    %br
-                    %span.label.label-default= pluralize(user.score, 'Ponto')
+                    .row
+                      .col-xs-1.col-md-2
+                        %h4= user.position
+                      .col-xs-3.col-md-3
+                        %a{href: user_profile_path(user)} 
+                          %img.img-circle{src: user.profile_image, width: 50}
+                      .col-xs-7.col-md-6
+                        %a{href: user_profile_path(user)}
+                          %strong=user.name
+                        %br{clear: "all"}
+                        %span.label.label-default= pluralize(user.score, 'Ponto')
 
+            - if @users.size > 3
+              %button.btn.expand_rank.btn-primary{type: "button"}
+                %span#expand.glyphicon.glyphicon-chevron-down
+
+        .col-lg-3
+          .box-rounded
+            %h4
+              %span.glyphicon.glyphicon-calendar
+              = t("today_matches")
+            - if @today_matches.empty?
+              %table.table
+                %tr
+                  %td= t("no_matches_today")
+            - else
+              %table.table
+                - @today_matches.each do |match|
+                  %tr
+                    %td.center
+                      = match.hora
+                      %span{class: match.status_classes}= match.open_to_guesses_label
+                    %td.center
+                      %img.img-circle.tooltip-img{src: match.team_a.flag, width: 30, hspace: 5, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_a.name}
+                    %td.center= match.goals_a
+                    %td.center X
+                    %td.center= match.goals_b
+                    %td.center
+                      %img.img-circle.tooltip-img{src: match.team_b.flag, width: 30, hspace: 5, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_b.name}
+              %a.btn.btn-default{href: my_guesses_path} Apostar
       %footer
         %p &copy; Bolão 2014
 

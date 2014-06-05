@@ -60,6 +60,16 @@ describe Match do
       matches[2].group.name.should == 'C'
       matches[3].group.name.should == 'E'
     end
+
+    it 'should list matches for today' do
+      m1 = create(:future_match, datetime: Time.now)
+      m2 = create(:future_match, datetime: Time.now)
+      m3 = create(:future_match)
+
+      matches = Match.today
+      matches.should include(m1,m2)
+      matches.should_not include(m3)
+    end
   end
 
   context 'class methods' do

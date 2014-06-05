@@ -8,6 +8,10 @@ class MatchDecorator < Draper::Decorator
     object.datetime.to_time.strftime('%d/%m/%Y %Hh')
   end
 
+  def hora
+    object.datetime.to_time.strftime('%Hh%M')
+  end
+
   def scorers_limited
     scorers.take(6)
   end

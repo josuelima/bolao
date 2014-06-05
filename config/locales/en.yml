@@ -1,5 +1,6 @@
 en:
   # Views
+  today_matches: "Today's Matches"
   sessions:
     or: "or"
     sign_in_with_facebook: "Sign in with Facebook"

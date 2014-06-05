@@ -12,6 +12,8 @@
 
   # Views
   point: "ponto"
+  today_matches: "Jogos de Hoje"
+  no_matches_today: "Não há jogos hoje"
 
   sessions:
     or: "ou"
