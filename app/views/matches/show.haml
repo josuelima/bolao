@@ -30,7 +30,7 @@
     = " | "
     - @match.scorers.each do |guess|
       %a{href: user_profile_path(guess.user)}
-        %img.img-circle.tooltip-img{src: guess.user.image, width: 25, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.user.name}
+        %img.img-circle.tooltip-img{src: guess.user.profile_image, width: 25, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.user.name}
 
 - if @match.is_open_to_guesses?
   .box-rounded

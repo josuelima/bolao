@@ -87,17 +87,6 @@ describe Match do
       match_past.is_open_to_guesses?.should be_false
     end
 
-    it 'should list only guesses which has scores > 0' do
-      match = create(:match, goals_a: 3, goals_b: 1)
-      create(:guess, match: match, goals_a: 3, goals_b: 1)
-      create(:guess, match: match, goals_a: 2, goals_b: 1)
-      create(:guess, match: match, goals_a: 3, goals_b: 3)
-      create(:guess, match: match, goals_a: 1, goals_b: 3)
-
-      match.should have(4).guesses
-      match.should have(2).scorers
-    end
-
     it 'should have a winner' do
       match = build(:match, goals_a: 2, goals_b: 1)
       match.winner.should == :team_a

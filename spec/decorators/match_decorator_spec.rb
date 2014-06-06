@@ -55,6 +55,17 @@ describe MatchDecorator do
       match_decorated.my_guess.should == guess_user_1
     end
 
+    it 'should list only guesses which has scores > 0' do
+      match = create(:match, goals_a: 3, goals_b: 1).decorate
+      create(:guess, match: match, goals_a: 3, goals_b: 1)
+      create(:guess, match: match, goals_a: 2, goals_b: 1)
+      create(:guess, match: match, goals_a: 3, goals_b: 3)
+      create(:guess, match: match, goals_a: 1, goals_b: 3)
+
+      match.should have(4).guesses
+      match.should have(2).scorers
+    end
+
     it 'should have only 6 scorers' do
       match = create(:match, goals_a: 3, goals_b: 1)
       create(:guess, match: match, goals_a: 3, goals_b: 1)

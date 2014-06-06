@@ -17,11 +17,6 @@ class Match < ActiveRecord::Base
   scope :group_ordered, -> { joins(:group).order("groups.name") }
   scope :today, -> { where("DATE(datetime) = DATE(?)", Time.now).order(:datetime) }
 
-  # select guesses which scored at least 1 point
-  def scorers
-    guesses.select { |g| g.score > 0 }
-  end
-
   def finished?
     !goals_a.nil? && !goals_b.nil?
   end

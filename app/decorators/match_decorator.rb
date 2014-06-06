@@ -12,6 +12,11 @@ class MatchDecorator < Draper::Decorator
     object.datetime.to_time.strftime('%Hh')
   end
 
+  # select guesses which scored at least 1 point
+  def scorers
+    guesses.select { |g| g.score > 0 }
+  end
+
   def scorers_limited
     scorers.take(6)
   end

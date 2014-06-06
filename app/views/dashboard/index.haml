@@ -33,7 +33,7 @@
                       = "&nbsp;".html_safe
                       - match.scorers_limited.each do |guess|
                         %a{href: match_details_path(match)}
-                          %img.img-circle.tooltip-img{src: guess.user.image, width: 20, title: guess.user.name, "data-toggle" => "tooltip", "data-placement" => "top"}
+                          %img.img-circle.tooltip-img{src: guess.user.profile_image, width: 20, title: guess.user.name, "data-toggle" => "tooltip", "data-placement" => "top"}
                 .col-md-3.right
                   %a.btn.btn-default.btn-xs{href: match_details_path(match)}
                     = "#{t("details")} &raquo;".html_safe

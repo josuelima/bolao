@@ -106,12 +106,12 @@
                         %a{href: match_details_path(match)}= match.hora
                         %span{class: match.status_classes}= match.open_to_guesses_label
                       %td.center
-                        %img.img-circle.tooltip-img{src: match.team_a.flag, width: 30, hspace: 5, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_a.name}
+                        %img.img-circle.tooltip-img{src: match.team_a.flag, width: 30, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_a.name}
                       %td.center= match.goals_a
                       %td.center X
                       %td.center= match.goals_b
                       %td.center
-                        %img.img-circle.tooltip-img{src: match.team_b.flag, width: 30, hspace: 5, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_b.name}
+                        %img.img-circle.tooltip-img{src: match.team_b.flag, width: 30, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_b.name}
               %a.btn.btn-default{href: my_guesses_path}= t("take_a_guess")
       %footer
         %p= "&copy; ".html_safe + t("app_title")
