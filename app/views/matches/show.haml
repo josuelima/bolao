@@ -39,18 +39,18 @@
         %span.glyphicon.glyphicon-info-sign
         = "Jogo ainda não iniciado! Volte em breve para ver as apostas dos outros participantes"
 - else
-  %h3 Apostas
+  %h3= t("guesses")
   .box-rounded
     %table.table
       %thead
         %th
-        %th.center Aposta
+        %th.center= t("guess")
         %th.center Pontuação
       - @match.guesses.each do |guess|
         %tr
           %td
             %a{href: user_profile_path(guess.user)}
-              %img.img-circle.hidden-xs{src: guess.user.image, width: 25, hspace: 5}
+              %img.img-circle.hidden-xs{src: guess.user.profile_image, width: 25, hspace: 5}
             %a{href: user_profile_path(guess.user)}
               = guess.user.name
           %td.center

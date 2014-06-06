@@ -4,7 +4,7 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=Edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title= content_for?(:title) ? yield(:title) : "Bolão Calçada"
+    %title= content_for?(:title) ? yield(:title) : t("page_title")
     = csrf_meta_tags
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
@@ -34,12 +34,12 @@
             %span.icon-bar
             %span.icon-bar
           %a.navbar-brand{:href => root_path} 
-            %strong Bolão Calçada
+            %strong= t("app_title")
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
-            %li= link_to "Apostar", my_guesses_path
-            %li= link_to "Meu Histórico", my_history_path
-            %li= link_to "Regras", rules_path
+            %li= link_to t("my_guesses"), my_guesses_path
+            %li= link_to t("history"), my_history_path
+            %li= link_to t("rules"), rules_path
           %ul.nav.navbar-nav.navbar-right
             %li
               %a{href: "#"}
@@ -47,7 +47,7 @@
                 = "&nbsp;".html_safe + current_user.name
             %li
               %a{href: "#"}
-                %span.label.label-success= pluralize(current_user.score, 'Ponto')                
+                %span.label.label-success= pluralize(current_user.score, t("point").camelize)                
             - if current_user.admin?
               %li
                 %a{href: rails_admin.dashboard_path, "data-no-turbolink" => ""}
@@ -56,7 +56,7 @@
                     = "Admin"
             %li
               %a{href: destroy_user_session_path, method: :delete, "data-method" => :delete, rel: :nofollow}
-                = "Sair"
+                = t("logout")
                 %span.glyphicon.glyphicon-log-out
                 
     .container
@@ -68,7 +68,7 @@
           .box-rounded
             %h4
               %span.glyphicon.glyphicon-fire
-              = "Classificação"
+              = t("ranking")
             %table.table
               - @users.each_with_index do |user, index|
                 %tr{class: ("hide hidden_rank" if index > 3)}
@@ -83,7 +83,7 @@
                         %a{href: user_profile_path(user)}
                           %strong=user.name
                         %br{clear: "all"}
-                        %span.label.label-default= pluralize(user.score, 'Ponto')
+                        %span.label.label-default= pluralize(user.score, t("point").camelize)
 
             - if @users.size > 4
               %button.btn.expand_rank.btn-primary{type: "button"}
@@ -111,8 +111,8 @@
                     %td.center= match.goals_b
                     %td.center
                       %img.img-circle.tooltip-img{src: match.team_b.flag, width: 30, hspace: 5, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_b.name}
-              %a.btn.btn-default{href: my_guesses_path} Apostar
+              %a.btn.btn-default{href: my_guesses_path}= t("guesses")
       %footer
-        %p &copy; Bolão 2014
+        %p= "&copy; ".html_safe + t("app_title")
 
     = javascript_include_tag "application"

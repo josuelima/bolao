@@ -11,9 +11,25 @@
         remember_me: 'Manter logado'
 
   # Views
+  # Global and dashboard
   point: "ponto"
   today_matches: "Jogos de Hoje"
   no_matches_today: "Não há jogos hoje"
+  my_guesses: "Meus Palpites"
+  history: "Histórico"
+  rules: "Regras"
+  app_title: "Bolão Calçada"
+  page_title: "Bolão Calçada"
+  take_a_guess: "Dar Palpite"
+  logout: "Sair"
+  ranking: "Classificação"
+  guesses: "Palpites"
+  guess: "Palpite"
+  details: "Detalhes"
+
+  # guesses
+  guesses_page:
+    save_guesses: "Salvar Palpites"
 
   sessions:
     or: "ou"
@@ -21,7 +37,7 @@
     create_account: "Criar Conta"
     back: "Voltar"
 
-  rules:
+  rules_page:
     guesses: >
       As apostas devem ser feitas até o horário de início da cada partida.
       Após o início da partida a mesma será removida da página de apostas e os 

@@ -24,7 +24,7 @@ describe MatchDecorator do
     it 'should formt the time' do
       now = Time.now
       match_decorated = create(:match, datetime: now).decorate
-      match_decorated.hora.should == now.strftime('%Hh%M')
+      match_decorated.hora.should == now.strftime('%Hh')
     end
 
     it 'should return open/close to guesses according to the match time' do

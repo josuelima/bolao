@@ -9,5 +9,5 @@
         %button.btn.btn-info= "##{@profile.position}"
 
 .box-rounded
-  %h2= "Apostas"
+  %h2= t("guesses")
   = render partial: "guesses_table", locals: {guesses: @profile.public_guesses}

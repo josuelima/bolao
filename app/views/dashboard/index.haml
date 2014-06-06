@@ -27,7 +27,7 @@
               .row
                 .col-md-9
                   %small
-                    = "Apostas:"
+                    = t("guesses") + ":"
                     %span{class: match.status_classes}= match.open_to_guesses_label
                     - unless match.my_guess.nil?
                       = "&nbsp;".html_safe
@@ -36,4 +36,4 @@
                           %img.img-circle.tooltip-img{src: guess.user.image, width: 20, title: guess.user.name, "data-toggle" => "tooltip", "data-placement" => "top"}
                 .col-md-3.right
                   %a.btn.btn-default.btn-xs{href: match_details_path(match)}
-                    = "Detalhes &raquo;".html_safe
+                    = "#{t("details")} &raquo;".html_safe
