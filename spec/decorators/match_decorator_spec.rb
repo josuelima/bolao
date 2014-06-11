@@ -83,5 +83,42 @@ describe MatchDecorator do
       match_decorated.should have(6).scorers_limited
     end
 
+    it 'should have guesses_max equals to users' do
+      create(:user)
+      create(:user)
+      create(:match)
+      match = Match.first.decorate
+      match.guesses_max.should == User.count      
+    end
+
+    it 'should have the progress of guesses made' do
+      match = create(:match).decorate
+      create(:user)
+      create(:user)
+
+      create(:guess, match: match, goals_a: 3, goals_b: 1)
+      create(:guess, match: match, goals_a: 2, goals_b: 1)
+
+      match.guesses_progress.should == (match.guesses.size.round(2) / User.count.round(2)) * 100
+    end
+
+    it 'should have a progress style class' do
+      create(:match)
+
+      styles = {
+        24  => "progress-bar-danger",
+        49  => "progress-bar-warning",
+        74  => "info",
+        99  => "progress-bar-active",
+        100 => "progress-bar-success"
+      }
+
+      styles.each do |total, style|
+        MatchDecorator.any_instance.stub(:guesses_progress).and_return(total)
+        match = Match.first.decorate
+        match.progress_class.should == style
+      end
+    end
+
   end
 end

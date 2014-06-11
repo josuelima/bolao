@@ -35,4 +35,26 @@ class MatchDecorator < Draper::Decorator
   def open_to_guesses_label
     is_open_to_guesses? ? "Aberto" : "Fechado"
   end
+
+  def guesses_max
+    User.count
+  end
+
+  def guesses_progress
+    (object.guesses.size.round(2) / guesses_max.round(2)) * 100.00
+  end
+
+  def progress_class
+    if guesses_progress < 25
+      "progress-bar-danger"
+    elsif guesses_progress < 50
+      "progress-bar-warning"
+    elsif guesses_progress < 75
+      "info"
+    elsif guesses_progress < 100
+      "progress-bar-active"
+    else
+      "progress-bar-success"
+    end
+  end
 end
