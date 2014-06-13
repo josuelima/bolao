@@ -24,7 +24,7 @@ describe GuessesController do
 
   describe 'POST update' do
 
-    it 'redirects to my guesses after update' do
+    it 'should update/create the guesses for the current user' do
       guess = create(:guess, match: create(:future_match), user: @user_session, goals_a: 3, goals_b: 1)
       match = create(:past_match)
 
@@ -37,15 +37,32 @@ describe GuessesController do
 
       post :update, guesses: guesses_post[:guesses]
       
+      # verify guesses where create/update for future match
       guess.reload
       guess.goals_a.should == 1
       guess.goals_b.should == 2
 
+
+      # verify no guesses where created for past matches
       match.reload
       match.guesses.should be_empty
     end
 
-    it 'should update/create the guesses for the current user' do
+    it 'should create only one guess for match by user' do
+      match = create(:future_match)
+
+      guesses_post = {guesses:
+                        [ 
+                           {id: '', match_id: match.id, goals_a: '1', goals_b: '2'},
+                           {id: '', match_id: match.id, goals_a: '1', goals_b: '2'}
+                        ]
+                     }
+
+      post :update, guesses: guesses_post[:guesses]
+      @user_session.guesses.select { |g| g.match_id == match.id }.size.should == 1
+    end
+
+    it 'redirects to my guesses after update' do
       match = create(:past_match)
       guesses_post = {guesses: [ { id: '', match_id: match.id, goals_a: '', goals_b: ''} ] }
       post :update, guesses: guesses_post[:guesses]

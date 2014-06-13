@@ -37,6 +37,4 @@ group :development, :test do
 end
 
 gem 'thin'
-gem 'foreman'
-
 ruby "2.1.0"

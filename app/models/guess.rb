@@ -6,6 +6,8 @@ class Guess < ActiveRecord::Base
   validates :goals_a, presence: true
   validates :goals_b, presence: true
 
+  validates :match, uniqueness: { scope: :user }
+
   belongs_to :user
   belongs_to :match
 

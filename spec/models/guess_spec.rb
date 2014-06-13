@@ -31,6 +31,12 @@ describe Guess do
       guess.to_s.should == "#{guess.goals_a} x #{guess.goals_b}"
     end
 
+    it "should accept only one guess for match by user" do
+      guess.save
+      guess_2 = build(:guess, user: guess.user, match: guess.match)
+      guess_2.should_not be_valid
+    end
+
   end
 
   context 'scopes' do
