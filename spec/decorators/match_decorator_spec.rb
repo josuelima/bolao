@@ -21,6 +21,16 @@ describe MatchDecorator do
       match_decorated.data_hora.should == now.strftime('%d/%m/%Y %Hh')
     end
 
+    it 'should be today' do
+      match_decorated = create(:match, datetime: Time.now).decorate
+      match_decorated.is_today?.should be_true
+    end
+
+    it 'should not be today' do
+      match_decorated = create(:future_match).decorate
+      match_decorated.is_today?.should be_false
+    end
+
     it 'should formt the time' do
       now = Time.now
       match_decorated = create(:match, datetime: now).decorate

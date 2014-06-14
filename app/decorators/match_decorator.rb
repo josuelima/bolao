@@ -8,6 +8,10 @@ class MatchDecorator < Draper::Decorator
     object.datetime.to_time.strftime('%d/%m/%Y %Hh')
   end
 
+  def is_today?
+    object.datetime.to_time.strftime('%d/%m/%Y') == Time.now.strftime('%d/%m/%Y')
+  end
+
   def hora
     object.datetime.to_time.strftime('%Hh')
   end

@@ -11,7 +11,7 @@
         - matches.each do |match|
           = hidden_field_tag "guesses[][id]", match.my_guess.try(:id)
           = hidden_field_tag "guesses[][match_id]", match.id
-          %tr
+          %tr{class: (match.is_today? ? "info" : "")}
             %td.hidden-xs= match.data_hora
             %td.hidden-xs{align: "right"}= match.team_a.name
             %td.center
@@ -24,4 +24,7 @@
             %td
               %img.img-circle.tooltip-img{src: match.team_b.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_b.name}
             %td.hidden-xs= match.team_b.name
+            %td
+              - if match.is_today?
+                %span.glyphicon.glyphicon-time.tooltip-img{"data-toggle" => "tooltip", "data-placement" => "left", title: "Jogo Hoje! Últimos momentos para palpitar."}
     = render 'submit_right'
