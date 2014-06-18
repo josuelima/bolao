@@ -14,22 +14,24 @@
 
       // full details for other devices
       %th.hidden-xs.center Jogo
-      %th.hidden-xs.center{colspan: 7} Resultado
+      %th.hidden-xs.center{colspan: 2}
+      %th.hidden-xs.center{colspan: 3} Resultado
+      %th.hidden-xs.center{colspan: 2}
       %th.hidden-xs.center.info{colspan: 3}= t("guess")
       %th.hidden-xs.center Pontuação
 
     - guesses.each do |guess|
       %tr
         // short details for mobile
-        %td.visible-xs.center
+        %td.visible-xs.center 
           %img.img-circle.tooltip-img{src: guess.match.team_a.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.match.team_a.name}
         %td.visible-xs.center= "#{guess.match.goals_a} x #{guess.match.goals_b}"
         %td.visible-xs.center
           %img.img-circle.tooltip-img{src: guess.match.team_b.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.match.team_b.name}
 
         // full details for other devices
-        %td.hidden-xs
-          %a{href: match_details_path(guess.match)}= "#{guess.match.data_hora} (#{guess.match.group.name})"
+        %td.hidden-xs.col-md-2.center
+          %a.tooltip-img{href: match_details_path(guess.match), "data-toggle" => "tooltip", "data-placement" => "right", title: guess.match.group.name}= "#{guess.match.data_hora}"
         %td.right.hidden-xs= guess.match.team_a.name      
         %td.center.hidden-xs
           %img.img-circle.tooltip-img{src: guess.match.team_a.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.match.team_a.name}
