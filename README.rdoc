@@ -1,16 +1,21 @@
 = \Bolão
-{<img src="https://travis-ci.org/josuelima/bolao.svg" alt="Build Status" />}[https://travis-ci.org/josuelima/bolao] {<img src="https://codeclimate.com/github/josuelima/bolao.png" />}[https://codeclimate.com/github/josuelima/bolao] {<img src="https://codeclimate.com/github/josuelima/coverage.png" />}[https://codeclimate.com/github/josuelima/bolao]
+{<img src="https://travis-ci.org/josuelima/bolao.svg" alt="Build Status" />}[https://travis-ci.org/josuelima/bolao] {<img src="https://codeclimate.com/github/josuelima/bolao.png" />}[https://codeclimate.com/github/josuelima/bolao] {<img src="https://codeclimate.com/github/josuelima/bolao/coverage.png" />}[https://codeclimate.com/github/josuelima/bolao]
 
 Bolão is a traditional Guess Game where the users post their guesses and score points acoording to the matches results.
 Groups of friends usually make a Bolão during World Cups or Football leagues.
 
 This Bolão app is flexible and you can customize it to whatever sport or competition you want as long as 
-it has two Versus match (like football, basketbal, volleyball and so on).
+it has Versus matches (like football, basketbal, volleyball and so on).
 
 Each guess must be saved before the match start. When a match starts it's not possible to update or save a guess for
 that match.
 
-It has a Ranking system that is updated on the end of each match generating scores for users who guess the final
+It also has a Ranking system that is updated on the end of each match generating scores for users who guess the final
 result.
+
+{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/1-dashboard.png" alt="User Dashboard" />}
+{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png" alt="Match Page" />}
+{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/3-guesses.png" alt="Guesses Page" />}
+{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/4-profile.png" alt="Profile Page" />}
 
 See it live at: {www.fuleir.us}[http://www.fuleir.us]
