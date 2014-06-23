@@ -1,7 +1,7 @@
 = \Bolão
 {<img src="https://travis-ci.org/josuelima/bolao.svg" alt="Build Status" />}[https://travis-ci.org/josuelima/bolao] {<img src="https://codeclimate.com/github/josuelima/bolao.png" />}[https://codeclimate.com/github/josuelima/bolao] {<img src="https://codeclimate.com/github/josuelima/bolao/coverage.png" />}[https://codeclimate.com/github/josuelima/bolao]
 
-Bolão is a traditional Guess Game where the users post their guesses and score points acoording to the matches results.
+Bolão is a traditional Guess Game where the users post their guesses for matches and then score points acoording to the matches results.
 Groups of friends usually make a Bolão during World Cups or Football leagues.
 
 This Bolão app is flexible and you can customize it to whatever sport or competition you want as long as 
@@ -17,5 +17,27 @@ result.
 {<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png" alt="Match Page" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png]
 {<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/3-guesses.png" alt="Guesses Page" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/3-guesses.png]
 {<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/4-profile.png" alt="Profile Page" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/4-profile.png]
+{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/5-responsive.png" alt="Responsive" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/5-responsive.png]
 
-See it live at: {www.fuleir.us}[http://www.fuleir.us]
+You can see it live at: {www.fuleir.us}[http://www.fuleir.us]
+
+== Configs
+
+There is no special configs to do. You will just need to add a user admin (admin=true) to manage the bolao through
+Rails Admin. 
+
+Each match should belong to a Group (like in world cup: Group A, Group B, Final...) and it's better and easier 
+use seeds to fill your bolao matches (see an exemple at db/seeds.rb)
+
+If you want to make it possible to sign in with facebook, you need to set the following environment variables:
+- APP_BOLAO_FACEBOOK_ID
+- APP_BOLAO_FACEBOOK_PASS
+
+In this case I'm using UOL CDN to retrieve the team's images. You can customize it according to the tournament or league
+your Bolao is running.
+
+This app is I18n ready. Available translations: en, pt-BR
+
+== Contributing
+
+If you want to improve something or add a new feature feel free to send your PR, contributions are welcome.
