@@ -17,7 +17,7 @@ result.
 {<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png" alt="Match Page" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png]
 {<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/3-guesses.png" alt="Guesses Page" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/3-guesses.png]
 {<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/4-profile.png" alt="Profile Page" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/4-profile.png]
-{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/5-responsive.png" alt="Responsive" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/5-responsive.png]
+{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/5-responsive.jpg" alt="Responsive" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/5-responsive.jpg]
 
 You can see it live at: {www.fuleir.us}[http://www.fuleir.us]
 
@@ -27,17 +27,17 @@ There is no special configs to do. You will just need to add a user admin (admin
 Rails Admin. 
 
 Each match should belong to a Group (like in world cup: Group A, Group B, Final...) and it's better and easier 
-use seeds to fill your bolao matches (see an exemple at db/seeds.rb)
+to use seeds in order to fill your bolao matches (see an exemple at db/seeds.rb)
 
-If you want to make it possible to sign in with facebook, you need to set the following environment variables:
+If you want to make it possible to sign in with facebook, then you will need to set the following environment variables:
 - APP_BOLAO_FACEBOOK_ID
 - APP_BOLAO_FACEBOOK_PASS
 
 In this case I'm using UOL CDN to retrieve the team's images. You can customize it according to the tournament or league
-your Bolao is running.
+your Bolao is running as well.
 
 This app is I18n ready. Available translations: en, pt-BR
 
 == Contributing
 
-If you want to improve something or add a new feature feel free to send your PR, contributions are welcome.
+If you want to improve something or add new features feel free to send your PR, contributions are welcome.
