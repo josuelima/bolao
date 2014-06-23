@@ -13,9 +13,9 @@ that match.
 It also has a Ranking system that is updated on the end of each match generating scores for users who guess the final
 result.
 
-{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/1-dashboard.png" alt="User Dashboard" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/1-dashboard.png]
-{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png" alt="Match Page" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png]
-{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/3-guesses.png" alt="Guesses Page" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/3-guesses.png]
-{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/4-profile.png" alt="Profile Page" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/4-profile.png]
+{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/1-dashboard.png" alt="User Dashboard" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/1-dashboard.png]
+{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png" alt="Match Page" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png]
+{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/3-guesses.png" alt="Guesses Page" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/3-guesses.png]
+{<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/4-profile.png" alt="Profile Page" width="200" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/4-profile.png]
 
 See it live at: {www.fuleir.us}[http://www.fuleir.us]
