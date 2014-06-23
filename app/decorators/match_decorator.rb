@@ -37,7 +37,7 @@ class MatchDecorator < Draper::Decorator
   end
 
   def open_to_guesses_label
-    is_open_to_guesses? ? "Aberto" : "Fechado"
+    is_open_to_guesses? ? I18n.t("open") : I18n.t("closed")
   end
 
   def guesses_max

@@ -2,17 +2,23 @@
   # Models
   activerecord:
     models:
-      user: 'Usuário'
+      user: 'Usuários'
+      group: 'Grupos'
+      match: 'Jogos'
+      team: 'Times'
     attributes:
       user:
-        name: 'Nome'
+        name: 'Nome'  
         password: 'Senha'
         password_confirmation: 'Confirmação de Senha'
         remember_me: 'Manter logado'
+        position: 'Posição'        
 
   # Views
   # Global and dashboard
   point: "ponto"
+  open: "Aberto"
+  closed: "Fechado"
   today_matches: "Jogos de Hoje"
   no_matches_today: "Não há jogos hoje"
   my_guesses: "Meus Palpites"
@@ -26,10 +32,24 @@
   guesses: "Palpites"
   guess: "Palpite"
   details: "Detalhes"
+  no_history: "Nenhum palpite para jogos finalizados para exibir no momento"
+  match: "Jogo"
+  result: "Resultado"
+  score: "Pontuação"
 
   # guesses
   guesses_page:
     save_guesses: "Salvar Palpites"
+    future_matches: "Jogos Futuros"
+    last_minutes: "Jogo Hoje! Últimos momentos para palpitar."
+
+  # history
+  history_page:
+    my_history: "Meu Histórico"
+
+  # matches
+  matches_page:
+    not_started: "Jogo ainda não iniciado! Volte em breve para ver as apostas dos outros participantes"
 
   sessions:
     or: "ou"
@@ -123,7 +143,7 @@
   # Rails admin
   admin:
     home:
-      name: Home
+      name: Início
     pagination:
       previous: "&laquo; Anterior"
       next: "Próximo &raquo;"
@@ -152,7 +172,7 @@
       model_not_found: "Modelo '%{model}' não encontrado "
       object_not_found: "%{model} com identificador '%{id}' não encontrado"
     table_headers:
-      model_name: "Nome do modelo"
+      model_name: "Modelo"
       last_used: "Última vez usado em"
       records: "Registros"
       username: "Usuário"

@@ -52,13 +52,28 @@ RailsAdmin.config do |config|
   config.excluded_models << 'Guess'
 
   config.model 'Match' do
-    field :id
-    field :datetime
+    list do
+      sort_by :datetime
+    end    
+    field :datetime do
+      sort_reverse false
+    end
     field :group
     field :team_a
     field :goals_a
     field :team_b
     field :goals_b
+  end
+
+  config.model 'Team' do
+    field :id
+    field :name
+  end
+
+  config.model 'Group' do
+    field :id
+    field :name
+    field :active
   end
 
   config.model 'User' do

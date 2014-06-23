@@ -15,14 +15,14 @@
     .col-md-6.col-md-offset-3   
       .progress.progress-striped.active
         .progress-bar{class: @match.progress_class, role: "progressbar", "aria-valuenow" => @match.guesses.size, "aria-valuemin" => "0", "aria-valuemax" => @match.guesses_max, style: "width: #{@match.guesses_progress}%"}
-          %span= "Palpites: #{@match.guesses.size} / #{@match.guesses_max}"
+          %span= "#{t("guesses")}: #{@match.guesses.size} / #{@match.guesses_max}"
 
 .box-rounded
   %span.glyphicon.glyphicon-time
   = @match.data_hora
   - if @match.is_open_to_guesses?
     = "&nbsp;".html_safe
-    %a.btn.btn-danger.btn-xs{href: my_guesses_path} Dar Palpite!
+    %a.btn.btn-danger.btn-xs{href: my_guesses_path}= t("take_a_guess")
   - unless @match.scorers.empty?
     = " | "
     - @match.scorers.each do |guess|
@@ -34,7 +34,7 @@
     %h2
       %small
         %span.glyphicon.glyphicon-info-sign
-        = "Jogo ainda não iniciado! Volte em breve para ver as apostas dos outros participantes"
+        = t("matches_page.not_started")
 - else
   %h3= t("guesses")
   .box-rounded
@@ -42,7 +42,7 @@
       %thead
         %th
         %th.center= t("guess")
-        %th.center Pontuação
+        %th.center= t("score")
       - @match.guesses.each do |guess|
         %tr
           %td
