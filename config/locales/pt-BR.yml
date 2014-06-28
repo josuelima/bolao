@@ -42,6 +42,7 @@
     save_guesses: "Salvar Palpites"
     future_matches: "Jogos Futuros"
     last_minutes: "Jogo Hoje! Últimos momentos para palpitar."
+    guesses_saved: "Palpites Salvos!"
 
   # history
   history_page:

@@ -27,6 +27,7 @@ en:
     save_guesses: "Save Guesses"
     future_matches: "Future Matches"
     last_minutes: "Today Match! Last moments to save your guess for this match!"
+    guesses_saved: "Guesses Saved!"
 
   # history
   history_page:

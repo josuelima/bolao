@@ -12,7 +12,7 @@ class GuessesController < ApplicationController
 
   def update
     Bolao::Guesses.save(params, current_user)
-    flash[:success] = "Apostas Salvas"
+    flash[:success] = t("guesses_page.guesses_saved")
     redirect_to my_guesses_path
   end
 end
