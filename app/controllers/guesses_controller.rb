@@ -5,6 +5,7 @@ class GuessesController < ApplicationController
     @grouped_matches = Match.
                           open_to_guesses.
                           group_ordered.
+                          order("datetime ASC").
                           decorate(context: {user: current_user}).
                           group_by(&:group)
   end
