@@ -7,11 +7,8 @@ Groups of friends usually make a Bolão during World Cups or Football leagues.
 This Bolão app is flexible and you can customize it to whatever sport or competition you want as long as 
 it has Versus matches (like football, basketbal, volleyball and so on).
 
-Each guess must be saved before the match start. When a match starts it's not possible to update or save a guess for
-that match.
-
-It also has a Ranking system that is updated on the end of each match generating scores for users who guess the final
-result.
+Each guess must be saved before the match starts. When a match starts it's not possible to update or save a guess for
+it anymore. When the match is over the Bolão admin will update it with the match result, which will generate scores based on the users guesses. A Rank will be shown in the main page according to the users scores. 
 
 {<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/1-dashboard.png" alt="User Dashboard" width="150" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/1-dashboard.png]
 {<img src="https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png" alt="Match Page" width="150" />}[https://raw.githubusercontent.com/josuelima/bolao/master/app/assets/images/2-match.png]
@@ -30,12 +27,11 @@ Rails Admin.
 Each match should belong to a Group (like in world cup: Group A, Group B, Final...) and it's better and easier 
 to use seeds in order to fill your bolao matches (see an exemple at db/seeds.rb)
 
-If you want to make it possible to sign in with facebook, then you will need to set the following environment variables:
+If you want to make it possible to sign in with facebook, then you will need to create your own app on facebook (it's pretty easy and fast) and set the following environment variables:
 - APP_BOLAO_FACEBOOK_ID
 - APP_BOLAO_FACEBOOK_PASS
 
-In this case I'm using UOL CDN to retrieve the team's images. You can customize it according to the tournament or league
-your Bolao is running as well.
+In this case I'm using UOL CDN to retrieve the team's images. You can customize it according to the tournament or league your Bolao is running, or use your custom images as well.
 
 This app is I18n ready. Available translations: en, pt-BR
 
