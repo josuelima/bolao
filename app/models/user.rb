@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :guesses
 
   # guesses for matches finished or started
-  has_many :public_guesses, -> { joins(:match).where("matches.datetime <= ?", Time.now) }, 
+  has_many :public_guesses, -> { joins(:match).where("matches.datetime <= ?", Time.now).order("matches.datetime DESC") }, 
            class_name: 'Guess', primary_key: :id, foreign_key: :user_id
 
   # put the users with no points (null = new user) to the end of the list

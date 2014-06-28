@@ -15,6 +15,7 @@ class Match < ActiveRecord::Base
   scope :active, -> { joins(:group).where("groups.active = ?", true) }
   scope :open_to_guesses, -> { where("datetime > ?", Time.now) }
   scope :group_ordered, -> { joins(:group).order("groups.name") }
+  scope :date_ordered, -> { order(:datetime) }
   scope :today, -> { where("DATE(datetime) = DATE(?)", Time.now).order(:datetime) }
 
   def finished?

@@ -2,7 +2,11 @@ class GuessesController < ApplicationController
 
   def my_guesses
     # get all open matches including and associates the current user guesses to it
-    @grouped_matches = Match.open_to_guesses.group_ordered.decorate(context: {user: current_user}).group_by(&:group)
+    @grouped_matches = Match.
+                          open_to_guesses.
+                          group_ordered.
+                          decorate(context: {user: current_user}).
+                          group_by(&:group)
   end
 
   def update
