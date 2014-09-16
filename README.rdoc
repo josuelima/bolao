@@ -21,18 +21,18 @@ You can see an example running on: {www.fuleir.us}[http://www.fuleir.us]
 
 == App
 
-This app is built on Rails 4 using some gems to make work easier ({RailsAdmin}[https://github.com/sferik/rails_admin] ,{Draper (for decorators)}[https://github.com/drapergem/draper], {Devise}[https://github.com/plataformatec/devise], {Haml}[https://github.com/haml/haml], {Bootstrap 3}[https://github.com/seyhunak/twitter-bootstrap-rails])
+This app is built on Rails 4 using {RailsAdmin}[https://github.com/sferik/rails_admin] as dashboard.
 
 Each match should belong to a Group (like in world cup: Group A, Group B, Final...) and it's better and easier 
-to use seeds in order to fill your bolao initial matches, in case you have manny (see an exemple at db/seeds.rb)
+to use seeds in order to fill your bolao initial matches in case you have manny (see an exemple at db/seeds.rb)
 
-Actually I'm using UOL CDN to retrieve the teams images (as its customized for the Fifa World Cup). However you can customize it according to the tournament or league your Bolao is running, or use your custom images by implement this feature as well.
+Actually I'm using UOL CDN to retrieve the teams images (as its customized for the Fifa World Cup). You can either customize it according to the tournament or league your Bolao is running, or use your custom images.
 
 I18n is done (en and pt-BR)
 
 == Configs
 
-There is no special configs to do. You will just need to add a user admin (admin=true) to manage the bolao through
+There is no special configs to do. You will just need to add an user admin (admin=true) to manage the bolao through
 Rails Admin.
 
 If you already have MySQL installed on your machine 'git pull' 'bundle' 'rake db:schema:load' and 'rails s' should be enough to make it run. 
