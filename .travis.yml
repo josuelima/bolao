@@ -9,4 +9,4 @@ addons:
      repo_token: 44daf63b2429a65c10170d2a1abcae6812d1648c075cdb3dcde54d01a27e1c54 
 before_script:
   - mysql -e 'create database bolao_test;'
-  - bundle exec rake db:migrate db:test:prepare
+  - bundle exec rake db:test:load
