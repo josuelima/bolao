@@ -1,10 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.4'
-
-gem 'mysql2'
 gem 'therubyracer', '~> 0.12.1'
-
 gem 'less-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -15,26 +12,27 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'haml'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 gem 'gravatar-ultimate'
-
 gem 'draper'
 gem 'rails_admin'
-
 gem 'i18n', github: 'svenfuchs/i18n'
 
 # authentication
 gem 'devise'
 gem 'omniauth-facebook'
 
+group :production do
+  gem 'thin'
+  gem 'mysql2'
+end
+
 group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rvm'
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.14'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'codeclimate-test-reporter', require: nil
+  gem 'sqlite3'
 end
-
-gem 'thin'
-ruby "2.1.0"

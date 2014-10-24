@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Bolao::Application.config.secret_key_base = ENV['APP_BOLAO_SECRET_TOKEN']
+Bolao::Application.config.secret_key_base = '84d6e72f3fb389fbb3ba9d0f5a15942c306ebdc998c995e2a5ec958262032c57a08f13be570daa9f82b1b4e301c031bf9ffdf75ec5036d0edb02c415a1e912c9'
