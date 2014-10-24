@@ -35,4 +35,5 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'codeclimate-test-reporter', require: nil
   gem 'sqlite3'
+  gem 'dotenv-rails'
 end

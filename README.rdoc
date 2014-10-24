@@ -41,6 +41,8 @@ If you want to make it possible to sign in with facebook, then you will need to 
 - APP_BOLAO_FACEBOOK_ID
 - APP_BOLAO_FACEBOOK_PASS
 
+(For development and tests you can use a .env file)
+
 == Contributing
 
 If you want to improve something or add new features feel free to send your PR, contributions are welcome.
