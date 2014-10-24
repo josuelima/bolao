@@ -37,3 +37,5 @@ group :development, :test do
   gem 'sqlite3'
   gem 'dotenv-rails'
 end
+
+gem 'mysql2', group: :test
