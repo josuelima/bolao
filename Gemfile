@@ -20,10 +20,8 @@ gem 'i18n', github: 'svenfuchs/i18n'
 gem 'devise'
 gem 'omniauth-facebook'
 
-group :production do
-  gem 'thin'
-  gem 'mysql2'
-end
+gem 'thin',   group: :production
+gem 'mysql2', group: [:production, :test]
 
 group :development, :test do
   gem 'capistrano'
@@ -37,5 +35,3 @@ group :development, :test do
   gem 'sqlite3'
   gem 'dotenv-rails'
 end
-
-gem 'mysql2', group: :test
