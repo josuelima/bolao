@@ -20,7 +20,7 @@ gem 'i18n', github: 'svenfuchs/i18n'
 gem 'devise'
 gem 'omniauth-facebook'
 
-gem 'thin',   group: :production
+gem 'puma',   group: :production
 gem 'mysql2', group: [:production, :test]
 
 group :development, :test do
