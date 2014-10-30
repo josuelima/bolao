@@ -15,6 +15,7 @@ gem 'gravatar-ultimate'
 gem 'draper'
 gem 'rails_admin'
 gem 'i18n', github: 'svenfuchs/i18n'
+gem 'figaro'
 
 # authentication
 gem 'devise'
@@ -29,5 +30,4 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'codeclimate-test-reporter', require: nil
   gem 'sqlite3'
-  gem 'dotenv-rails'
 end

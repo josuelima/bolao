@@ -41,7 +41,7 @@ If you want to make it possible to sign in with facebook, then you will need to 
 - APP_BOLAO_FACEBOOK_ID
 - APP_BOLAO_FACEBOOK_PASS
 
-(For development and tests you can use a .env file)
+(You can use {figaro}[https://github.com/laserlemon/figaro] for it. check config/application.example.yml)
 
 == Contributing
 
