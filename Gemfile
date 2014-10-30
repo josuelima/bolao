@@ -20,14 +20,10 @@ gem 'i18n', github: 'svenfuchs/i18n'
 gem 'devise'
 gem 'omniauth-facebook'
 
-gem 'puma',   group: :production
+gem 'puma'
 gem 'mysql2', group: [:production, :test]
 
 group :development, :test do
-  gem 'capistrano'
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
   gem 'rspec-rails', '~> 2.14'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
