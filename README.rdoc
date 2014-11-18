@@ -30,6 +30,8 @@ Actually I'm using UOL CDN to retrieve the teams images. You can either customiz
 
 I18n is done (en and pt-BR)
 
+Draper was used to decorate models and controllers, however I think it leaves a large footprint on the code. Maybe its better to remove draper in future.
+
 == Configs
 
 There is no special configs to do. You will just need to add an user admin (admin=true) to manage the bolao through
