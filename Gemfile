@@ -31,3 +31,5 @@ group :development, :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'sqlite3'
 end
+
+ruby '2.1.2'
